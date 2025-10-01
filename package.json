@@ -5,19 +5,33 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "start": "next start",
+    "lex:build": "./scripts/build-lexicons.sh"
   },
   "dependencies": {
+    "@atcute/bluesky": "^3.2.3",
+    "@atcute/jetstream": "^1.1.0",
+    "@atcute/lexicons": "^1.1.1",
+    "@atproto/api": "^0.17.0",
+    "@atproto/lex-cli": "^0.9.5",
+    "@atproto/xrpc": "^0.7.5",
+    "@opennextjs/cloudflare": "^1.9.0",
+    "multiformats": "^13.4.1",
+    "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "wrangler": "^4.40.3"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
